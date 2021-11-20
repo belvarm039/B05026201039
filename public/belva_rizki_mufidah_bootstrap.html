@@ -1,0 +1,130 @@
+<html>
+    <head>
+        <title>
+            Welcome to My Place
+        </title>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                background-color: #92a8d1;
+                background-image: linear-gradient(to bottom right, #92a8d1, #f7cac9);
+                color :white ;
+                letter-spacing: 1mm ;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            }
+            .para1 {
+                border-style: dotted;
+                border-color: #915f8e;
+                text-shadow: 2px 2px dimgrey;
+            }
+            .para2 {
+                word-spacing: 1cm ;
+                line-height: 0.5cm ;
+                text-shadow: 2px 2px dimgrey;
+                text-decoration-line: underline;
+                text-decoration-style: wavy;
+                text-decoration-color: rgb(114, 102, 139);
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+            .para3 {
+                border-style: dotted solid double;
+                border-top-color: rgb(110, 71, 133);
+                border-bottom-color: rgb(110, 71, 133);
+                border-left-color: darkseagreen;
+                border-right-color: darkseagreen;
+                text-transform: uppercase;
+                text-shadow: 2px 2px dimgrey;
+            }
+            .para4 {
+                outline-style: outset;
+                outline-color: rgb(81, 148, 148);
+                text-shadow: 2px 2px dimgrey;
+                text-align: center;
+                direction:rtl;
+                unicode-bidi: bidi-override;
+            }
+            .para5 {
+                outline-style: groove;
+                outline-color: rgb(114, 60, 111);
+                outline-width: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-size: 300%; text-align: center;" class="para1">
+            <strong>
+                Profile &#127769;
+            </strong>
+        </h1>
+        <h2 class="para4">
+            <i>
+                Biodata
+            </i>
+        </h2>
+        <p>
+            Nama:   <mark>Belva</mark> Rizki Mufidah <br>
+            TTL:    Bandung, 11 Maret 2003 <br>
+            Asal:   Sidoarjo <br>
+            Alamat: Perum. Delta Sari Baru, Jl. Delta Raya Timur no. 3, Waru, Sidoarjo <br>
+            Hobi:   
+            <ul>
+                <li>Mendengarkan lagu</li>
+                <li>Menonton film</li>
+            </ul>
+            Status: Mahasiswi
+        </p>
+        <hr>
+        <h2 class="para2">
+            <i>
+                Pendidikan
+            </i>
+        </h2>
+        <p>
+            <b>SD</b>: SD Laboratorium UNESA <br>
+            <b>SMP</b>: SMPN 12 Surabaya <br>
+            <b>SMA</b>: SMAN 15 Surabaya <br>
+        </p>
+        <hr>
+        <h2 style="text-align: center;" class="para5"> 
+            <i>
+                How To Reach Me
+            </i>
+        </h2>
+        <p style="text-align: center;" class="para3">
+            Social Media and Contact
+        </p>
+        <div class="container">
+            <p>Please choose one to how to reach me!!</p>
+            <form action="/action_page.php">
+              <div class="form-group">
+                <label for="sel1">Please select :</label>
+                <select class="form-control" id="sel1" name="sellist1">
+                  <option>Whatsapp: 081284025527</option>
+                  <option>LINE: belvarm</option>
+                  <option>Instagram: belvaaarm</option>
+                  <option>Email: belvarizkii.m@gmail.com</option>
+                </select>
+        <div class="container">
+            <h2>Hi!</h2>
+            <p>Please leave a trace in here!!</p>
+            <form action="/action_page.php">
+              <div class="form-group">
+                <label for="comment">Comment:</label>
+                <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+
+    </body>
+</html>
