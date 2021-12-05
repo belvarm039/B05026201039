@@ -6,6 +6,10 @@
 
 @section('judulhalaman', 'EDIT ABSEN')
 
+<h3>EDIT ABSEN PEGAWAI</h3>
+
+<a href="/absen"> Kembali</a>
+
 	@foreach($absen as $p)
 	<form action="/absen/update" method="post">
 		{{ csrf_field() }}
