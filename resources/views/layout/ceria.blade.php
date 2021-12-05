@@ -86,7 +86,6 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
     <a href="/pegawai">Pegawai</a>
     <a href="/absen">Absen</a>
-    <a href="#">Tugas</a>
     <a href="#">Praktikum</a>
 </div>
 
