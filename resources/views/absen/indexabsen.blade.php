@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
+	<title>Data Absen Pegawai</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-	<h2>www.malasngoding.com</h2>
-	<h3>Data Absen</h3>
+    <div class="container" align='center'>
+	<h2>Data Absen</h2>
 
-	<a href="/absen/tambah"> + Tambah Data Baru</a>
+	<a href="/absen/tambah">
+        <input class="btn-warning" type="button" value="Tambah Presensi Baru">
+    </a>
 
 	<br/>
 	<br/>
 
 	<table border="1">
 		<tr>
-			<th>ID</th>
-			<th>IDPegawai</th>
+			<th>Nama Pegawai</th>
 			<th>Tanggal</th>
 			<th>Status</th>
 			<th>Opsi</th>
 		</tr>
 		@foreach($absen as $p)
 		<tr>
-			<td>{{ $p->absen_id }}</td>
+			<td>{{ $p->pegawai_nama }}</td>
 			<td>{{ $p->absen_idpegawai }}</td>
 			<td>{{ $p->absen_tanggal }}</td>
 			<td>{{ $p->absen_status }}</td>
@@ -35,6 +41,8 @@
 		</tr>
 		@endforeach
 	</table>
+    {{ $absen->links() }}
+    </div>
 
 
 </body>

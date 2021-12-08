@@ -40,6 +40,8 @@
         <input type="radio" id="tidak" name="status" value="T" @if ($p->absen_status === "T") checked="checked" @endif>
         <label for="tidak">TIDAK HADIR</label><br>
 
+        <input type="submit" value="Simpan Data">
+
 	</form>
 	@endforeach
 
