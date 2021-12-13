@@ -49,3 +49,11 @@ Route::post('/absen/store','AbsenController@store');
 Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
+
+//route CRUD modem
+Route::get('/modem','ModemController@index');
+Route::get('/modem/tambah','ModemController@tambah');
+Route::post('/modem/store','ModemController@store');
+Route::get('/modem/edit/{id}','ModemController@edit');
+Route::post('/modem/update','ModemController@update');
+Route::get('/modem/hapus/{id}','ModemController@hapus');
