@@ -11,7 +11,8 @@ class ModemController extends Controller
     public function index()
     {
         // mengambil data dari table modem
-        $modem = DB::table('modem')->get();
+        // $modem = DB::table('modem')->get();
+        $modem = DB::table('modem')->paginate(5);
 
         // mengirim data modem ke view index
         return view('modem.index', ['modem' => $modem]);
@@ -62,13 +63,28 @@ class ModemController extends Controller
         return redirect('/modem');
     }
 
-    // method untuk hapus data pegawai
+    // method untuk hapus data modem
     public function hapus($kodemodem)
     {
-        // menghapus data pegawai berdasarkan id yang dipilih
+        // menghapus data modem berdasarkan id yang dipilih
         DB::table('modem')->where('kodemodem', $kodemodem)->delete();
 
-        // alihkan halaman ke halaman pegawai
+        // alihkan halaman ke halaman modem
         return redirect('/modem');
+    }
+
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari table modem sesuai pencarian data
+        $modem = DB::table('modem')
+            ->where('kodemodem', 'like', "%" . $cari . "%")
+            ->orWhere('merkmodem', 'like', "%" . $cari . "%")
+            ->paginate();
+
+        // mengirim data modem ke view index
+        return view('modem.index', ['modem' => $modem]);
     }
 }

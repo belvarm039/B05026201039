@@ -19,7 +19,7 @@ class AbsenController extends Controller
 
 
         // mengirim data absen ke view index
-        return view('absen.indexabsen', ['absen' => $absen]);
+        return view('absen.index', ['absen' => $absen]);
     }
 
     // method untuk menampilkan view form tambah pegawai
@@ -29,7 +29,7 @@ class AbsenController extends Controller
         // memanggil view tambah
         $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
 
-        return view('absen.tambahabsen', ['pegawai' => $pegawai]);
+        return view('absen.tambah', ['pegawai' => $pegawai]);
     }
 
     // method untuk insert data ke table absen
@@ -55,7 +55,7 @@ class AbsenController extends Controller
 
         $judul = "Haloo Apa Kabar" ;
         // passing data absen yang didapat ke view editabsen.blade.php
-        return view('absen.editabsen', ['absen' => $absen,'pegawai' => $pegawai,'judul' => $judul]);
+        return view('absen.edit', ['absen' => $absen,'pegawai' => $pegawai,'judul' => $judul]);
     }
 
     // update data absen
@@ -80,5 +80,19 @@ class AbsenController extends Controller
 
         // alihkan halaman ke halaman absen
         return redirect('/absen');
+    }
+
+    public function cari(Request $request)
+    {
+        // menangkap data pencarian
+        $cari = $request->cari;
+
+        // mengambil data dari table absen sesuai pencarian data
+        $pegawai = DB::table('pegawai')
+            ->where('pegawai_nama', 'like', "%" . $cari . "%")
+            ->paginate();
+
+        // mengirim data absen ke view index
+        return view('pegawai.index', ['pegawai' => $pegawai]);
     }
 }

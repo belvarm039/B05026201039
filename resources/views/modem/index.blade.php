@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Data Modem</title>
-</head>
-<body>
+@extends('layout.ceria')
+
+@section('title', 'DATA MODEM')
+
+@section('isikonten')
+
+@section('judulhalaman', 'Data Modem')
+
+	<style type="text/css">
+		.pagination li{
+			float: justify;
+			list-style-type: none;
+		}
+	</style>
+
+    <div class="container" align='center'>
 
 	<h2>Data Modem</h2>
-
-	<a href="/modem/tambah"> + Tambah Modem Baru</a>
-
-	<br/>
 	<br/>
 
-	<table border="1">
+    <p>Cari Data Modem :</p>
+        <form action="/modem/cari" method="GET">
+            <input type="text" name="cari" placeholder="Cari Modem .." value="{{ old('cari') }}">
+            <input class="btn-success" type="submit" value="CARI">
+        </form>
+
+    <br/>
+    <br/>
+
+    <a href="/modem/tambah"> <button type="button" class="btn btn-primary">+ Tambah Data Baru</button></a>
+    <br/>
+    <br/>
+
+	<table border="2">
 		<tr>
 			<th>Kode</th>
 			<th>Merk</th>
@@ -27,14 +46,13 @@
 			<td>{{ $p->stockmodem }}</td>
 			<td>{{ $p->tersedia }}</td>
 			<td>
-				<a href="/modem/edit/{{ $p->kodemodem }}">Edit</a>
+				<a href="/modem/edit/{{ $p->kodemodem }}"><button type="button" class="btn btn-outline-info btn-sm">Edit</button></a>
 				|
-				<a href="/modem/hapus/{{ $p->kodemodem }}">Hapus</a>
+				<a href="/modem/hapus/{{ $p->kodemodem }}"><button type="button" class="btn btn-outline-danger btn-sm">Hapus</button></a>
 			</td>
 		</tr>
 		@endforeach
 	</table>
-
-
-</body>
-</html>
+	{{ $modem->links() }}
+	</div>
+@endsection
