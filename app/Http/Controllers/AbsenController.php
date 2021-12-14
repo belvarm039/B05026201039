@@ -13,7 +13,7 @@ class AbsenController extends Controller
         // mengambil data dari table absen
         // $absen = DB::table('absen')->get();
         $absen = DB::table('absen')
-        ->join('pegawai', 'absen.absen_idpegawai', '=', 'pegawai.pegawai_id')
+        ->join('pegawai', 'absen.idpegawai', '=', 'pegawai.pegawai_id')
         ->select('absen.*', 'pegawai.pegawai_nama')
         ->paginate(3);
 
@@ -37,9 +37,9 @@ class AbsenController extends Controller
     {
         // insert data ke table absen
         DB::table('absen')->insert([
-            'absen_idpegawai' => $request->idpegawai,
-            'absen_tanggal' => $request->tanggal,
-            'absen_status' => $request->status
+            'idpegawai' => $request->idpegawai,
+            'tanggal' => $request->tanggal,
+            'status' => $request->status
         ]);
         // alihkan halaman ke halaman absen
         return redirect('/absen');
@@ -49,7 +49,7 @@ class AbsenController extends Controller
     public function edit($id)
     {
         // mengambil data absen berdasarkan id yang dipilih
-        $absen = DB::table('absen')->where('absen_id', $id)->get();
+        $absen = DB::table('absen')->where('id', $id)->get();
 
         $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
 
@@ -62,11 +62,11 @@ class AbsenController extends Controller
     public function update(Request $request)
     {
         // update data absen
-        DB::table('absen')->where('absen_id', $request->id)->update([
+        DB::table('absen')->where('id', $request->id)->update([
             // update data pegawai
-            'absen_idpegawai' => $request->idpegawai,
-            'absen_tanggal' => $request->tanggal,
-            'absen_status' => $request->status
+            'idpegawai' => $request->idpegawai,
+            'tanggal' => $request->tanggal,
+            'status' => $request->status
         ]);
         // alihkan halaman ke halaman absen
         return redirect('/absen');
@@ -76,7 +76,7 @@ class AbsenController extends Controller
     public function hapus($id)
     {
         // menghapus data absen berdasarkan id yang dipilih
-        DB::table('absen')->where('absen_id', $id)->delete();
+        DB::table('absen')->where('id', $id)->delete();
 
         // alihkan halaman ke halaman absen
         return redirect('/absen');

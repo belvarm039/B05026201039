@@ -13,10 +13,10 @@
 	@foreach($absen as $p)
 	<form action="/absen/update" method="post">
 		{{ csrf_field() }}
-		<input type="hidden" name="id" value="{{ $p->absen_id }}"> <br/>
+		<input type="hidden" name="id" value="{{ $p->id }}"> <br/>
         Pegawai: <select id="idpegawai" name="idpegawai" required="required">
             @foreach($pegawai as $peg)
-                <option value="{{ $peg->pegawai_id }}" @if ($peg->pegawai_id === $p->absen_idpegawai) selected="selected" @endif> {{ $peg->pegawai_nama }}</option>
+                <option value="{{ $peg->pegawai_id }}" @if ($peg->pegawai_id === $p->idpegawai) selected="selected" @endif> {{ $peg->pegawai_nama }}</option>
             @endforeach
         </select><br>
 
@@ -35,9 +35,9 @@
             <br>
 
         Status:
-        <input type="radio" id="hadir" name="status" value="H" @if ($p->absen_status === "H") checked="checked" @endif>
+        <input type="radio" id="hadir" name="status" value="H" @if ($p->status === "H") checked="checked" @endif>
         <label for="hadir">HADIR</label>
-        <input type="radio" id="tidak" name="status" value="T" @if ($p->absen_status === "T") checked="checked" @endif>
+        <input type="radio" id="tidak" name="status" value="T" @if ($p->status === "T") checked="checked" @endif>
         <label for="tidak">TIDAK HADIR</label><br>
 
         <input type="submit" value="Simpan Data">

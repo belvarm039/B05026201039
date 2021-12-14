@@ -32,13 +32,13 @@
 		@foreach($absen as $p)
 		<tr>
 			<td>{{ $p->pegawai_nama }}</td>
-			<td>{{ $p->absen_idpegawai }}</td>
-			<td>{{ $p->absen_tanggal }}</td>
-			<td>{{ $p->absen_status }}</td>
+			<td>{{ $p->idpegawai }}</td>
+			<td>{{ $p->tanggal }}</td>
+			<td>{{ $p->status }}</td>
 			<td>
-				<a href="/absen/edit/{{ $p->absen_id }}"><button type="button" class="btn btn-outline-info btn-sm">Edit</button></a>
+				<a href="/absen/edit/{{ $p->id }}"><button type="button" class="btn btn-outline-info btn-sm">Edit</button></a>
 				|
-				<a href="/absen/hapus/{{ $p->absen_id }}"><button type="button" class="btn btn-outline-danger btn-sm">Hapus</button></a>
+				<a href="/absen/hapus/{{ $p->id }}"><button type="button" class="btn btn-outline-danger btn-sm">Hapus</button></a>
 			</td>
 		</tr>
 		@endforeach
