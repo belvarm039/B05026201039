@@ -59,3 +59,19 @@ Route::get('/modem/edit/{id}','ModemController@edit');
 Route::post('/modem/update','ModemController@update');
 Route::get('/modem/hapus/{id}','ModemController@hapus');
 Route::get('/modem/cari','ModemController@cari');
+
+//route CRUD keranjangbelanja
+Route::get('/keranjangbelanja','KeranjangBelanjaController@index');
+Route::get('/keranjangbelanja/tambah','KeranjangBelanjaController@tambah');
+Route::post('/keranjangbelanja/store','KeranjangBelanjaController@store');
+Route::get('/keranjangbelanja/hapus/{id}','KeranjangBelanjaController@hapus');
+// Route::get('/keranjangbelanja/total', function($opsi, $angka1, $angka2){
+//     switch ($opsi) {
+//     case 'kali':
+//         return "$angka1 * $angka2 = ".($angka1*$angka2);
+//         break;
+//     default:
+//       return "Opsi tidak dikenal";
+//       break;
+//     }
+//    });
